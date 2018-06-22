@@ -1,104 +1,19 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
+def sachinFunction_GithHub():
 
-# C extensions
-*.so
+import requests
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+url = "https://surveyfirmifmr.surveycto.com/api/v1/forms/data/wide/json/Try_Sachin"
 
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
+querystring = {"api_key":"TQB8S1xOuDWtBFL8hxtMsGW5W2bqAJNw"}
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+headers = {
+    'api_key': "TQB8S1xOuDWtBFL8hxtMsGW5W2bqAJNw",
+    'realm': "surveyfirmifmr.surveycto.com",
+    'Authorization': "Digest username=\"user\", realm=\"surveyfirmifmr.surveycto.com\", nonce=\"MTUyOTY3NTQxMTMzOTo5MmYzZmU5MzMxMzZjNTIwMDk0NGZlZjI2NTQwODQ4ZQ==\", uri=\"/api/v1/forms/data/wide/json/Try_Sachin\", algorithm=\"MD5\", qop=auth, nc=00000001, cnonce=\"r6obYKRL\", response=\"99478aa29ce79c7e739842f582dda402\"",
+    'Cache-Control': "no-cache",
+    'Postman-Token': "de8882df-fc5b-4b03-b804-93e141a1315a"
+    }
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
+response = requests.request("GET", url, headers=headers, params=querystring)
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule file
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
+return response.text
